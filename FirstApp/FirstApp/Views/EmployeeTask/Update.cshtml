@@ -1,0 +1,25 @@
+﻿@model EmployeeTask
+@{
+    ViewData["Title"] = "Update";
+}
+<a asp-action="Index">View All Employee Tasks</a>
+<h2>Update</h2>
+<form method="post">
+    <p>
+        <label asp-for="TaskName">Your Task Name:</label>
+        <input asp-for="TaskName" readonly="readonly" disabled="disabled"/>
+        <span asp-validation-for="TaskName"></span>
+    </p>
+    <p>
+        <label asp-for="StartDate">Start Date:</label>
+        <input asp-for="StartDate" />
+        <span asp-validation-for="StartDate"></span>
+    </p>
+    <p>
+        <label asp-for="EndDate">End Date:</label>
+        <input asp-for="EndDate" />
+        <span asp-validation-for="EndDate"></span>
+    </p>
+    <p><button type="submit">Submit</button></p>
+</form>
+

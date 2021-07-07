@@ -1,0 +1,29 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Update";
+}
+<a asp-action="Index">View All Employees</a>
+<h2>Update</h2>
+<form method="post">
+    <p>
+        <label asp-for="Name">Your First Name:</label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </p>
+    <p>
+        <label asp-for="LastName">Your Last Name:</label>
+        <input asp-for="LastName" />
+        <span asp-validation-for="LastName"></span>
+    </p>
+    <p>
+        <label asp-for="HiredDate">Your Hire Date:</label>
+        <input asp-for="HiredDate" />
+        <span asp-validation-for="HiredDate"></span>
+    </p>    
+    <p>
+        <label asp-for="TaskName">Task:</label>
+        @Html.DropDownListFor(m => m.TaskName, (SelectList)ViewBag.Types);
+    </p>
+    <p><button type="submit">Submit</button></p>
+</form>
+
